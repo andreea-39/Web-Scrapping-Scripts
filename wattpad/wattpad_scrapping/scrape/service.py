@@ -193,8 +193,8 @@ def extract_story_content(driver, url):
 """
 def determine_next_file_number():
     flag = "old_folder"
-    if len(os.path.join("wattpad_scrapping" , "output"))==0:
-        return 1
+    if len(os.listdir(os.path.join("wattpad_scrapping" , "output")))==0:
+        return 1, "new_folder"
     
     highest_number = 1
     for file in os.listdir(os.path.join("wattpad_scrapping" , "output")):
